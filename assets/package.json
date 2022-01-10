@@ -1,0 +1,23 @@
+{
+    "scripts": {
+        "deploy": "rollup --config",
+        "watch": "rollup --config --watch"
+    },
+    "dependencies": {
+        "phoenix": "file:../deps/phoenix",
+        "phoenix_html": "file:../deps/phoenix_html",
+        "phoenix_live_view": "file:../deps/phoenix_live_view"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^17.0.0",
+        "@rollup/plugin-node-resolve": "^11.0.0",
+        "rollup": "^2.3.4",
+        "rollup-plugin-copy": "^3.4.0",
+        "rollup-plugin-css-only": "^3.1.0",
+        "rollup-plugin-livereload": "^2.0.0",
+        "rollup-plugin-svelte": "^7.0.0",
+        "rollup-plugin-terser": "^7.0.0",
+        "svelte": "^3.0.0",
+        "generate-source-map": "^0.0.5"
+    }
+}
