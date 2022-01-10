@@ -1,6 +1,6 @@
 # Svonix
 
-Svonix is a small library that allows you to easily create an use [Svelte](https://svelte.dev/) components in [Phoenix](https://www.phoenixframework.org/).
+Svonix is a small library that allows you to easily create and use [Svelte](https://svelte.dev/) components in [Phoenix](https://www.phoenixframework.org/).
 
 Svonix is loosely based on the ideas behind [Sveltex](https://github.com/virkillz/sveltex), but is written from the ground up to support [Phoenix](https://www.phoenixframework.org/) `> 1.6`, as well as dynamic loading of individual Svelte components to save bandwidth.
 
@@ -8,13 +8,12 @@ Svonix adds [Rollup](https://rollupjs.org/guide/en/) to your Phoenix project, re
 
 ## Installation
 
-1. If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `svonix` to your list of dependencies in `mix.exs`:
+1. Add `svonix` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:svonix, "~> 0.1.0"}
+    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "0.1"}
   ]
 end
 ```
