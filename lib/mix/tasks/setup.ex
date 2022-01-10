@@ -12,6 +12,7 @@ defmodule Mix.Tasks.Svonix.Setup do
     Mix.Generator.create_directory("assets/svelte")
 
     # Run npm install (use :os.cmd for simplicity)
+    IO.puts "Running npm install. This might take a second."
     npm_result = "cd assets && npm install" |> String.to_charlist() |> :os.cmd
     IO.puts npm_result
   end
