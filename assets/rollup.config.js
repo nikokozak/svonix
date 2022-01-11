@@ -57,15 +57,13 @@ const phoenixAppConfig = {
 		}),
 		css({ output: 'app.css' }),
 		commonjs(),
+        // ADD OTHER NON-PROCESSED ASSETS HERE, SEE:
+        // https://www.npmjs.com/package/rollup-plugin-copy
         copy({
             targets: [{
-            src: "static/*",
-            dest: "../priv/static"
-            },
-            {
-            src: "images/*",
-            dest: "../priv/static/images"
-            }],
+                src: ["css/**/*", "!css/app.css"],
+                dest: "../priv/static/assets"
+            }]
         }),
         svonix({}),
 		production && terser()
