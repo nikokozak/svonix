@@ -9,7 +9,7 @@ defmodule Mix.Tasks.Svonix.Setup do
       Mix.Generator.copy_file(file, "assets/" <> Path.basename(file))
     end)
 
-    Mix.Generator.create_directory("assets/svelte")
+    Mix.Generator.create_directory("assets/js/svelte")
 
     # Run npm install (use :os.cmd for simplicity)
     IO.puts "Running npm install. This might take a second."

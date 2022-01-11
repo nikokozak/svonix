@@ -25,7 +25,7 @@ end
 - `rollup.config.js` (configuration for the Rollup bundler)
 - `svonix_rollup_plugin.js` (a Rollup plugin that injects a small handler into your `app.js`, allowing Svelte components to be dynamically loaded)
 
-3. In your `config/dev.exs` file, add a watcher:
+3. In your `config/dev.exs` file, add a watcher (you can replace the ESBuild watcher already there):
 
 ```elixir
 config :my_app, MyApp.Endpoint,
@@ -40,10 +40,10 @@ config :my_app, MyApp.Endpoint,
     ]
 ```
 
-4. Finally, in your `assets/app.js` file, add the following line at the top:
+4. Finally, in your `assets/js/app.js` file, add the following line at the top:
 
 ```javascript
-import 'sveltex'
+import 'svonix'
 ```
 
 ## Usage
@@ -60,7 +60,7 @@ import 'sveltex'
 2. Next, add a Svonix tag where desired, and pass in the arguments you like:
 ```elixir
 // lib/myapp_web/templates/page/index.html.heex
-<%= Sveltex.render "test", %{ name: "Nikolai" } %>
+<%= Svonix.render "test", %{ name: "Nikolai" } %>
 ```
 
 You should see the component rendered in the view.
