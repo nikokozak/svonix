@@ -11,29 +11,34 @@ const production = !process.env.MIX_ENV == "prod";
 console.log("Production:", production);
 
 const svelteComponentFiles = glob.sync('*.svelte', {cwd: 'js/svelte'});
+const svelteComponentsConfig;
 
-const svelteComponentsConfig = {
-    input: svelteComponentFiles.map(fileName => `js/svelte/${fileName}`),
-    output: {
-        sourcemap: true,
-        format: 'es',
-        dir: '../priv/static/assets/svelte_components/'
-    },
-    plugins: [
-        resolve({
-            browser: true,
-            dedupe: ['svelte']
-        }),
-        svelte({
-            compilerOptions: {
-                // enable run-time checks when not in production
-                dev: !production
-            }
-        }),
-        commonjs(),
-        production && terser(),
-        production && filesize()
-    ]
+if (svelteComponentFiles.length > 0) {
+    svelteComponentsConfig = [{
+        input: svelteComponentFiles.map(fileName => `js/svelte/${fileName}`),
+        output: {
+            sourcemap: true,
+            format: 'es',
+            dir: '../priv/static/assets/svelte_components/'
+        },
+        plugins: [
+            resolve({
+                browser: true,
+                dedupe: ['svelte']
+            }),
+            svelte({
+                compilerOptions: {
+                    // enable run-time checks when not in production
+                    dev: !production
+                }
+            }),
+            commonjs(),
+            production && terser(),
+            production && filesize()
+        ]
+    }]
+} else {
+    svelteComponentsConfig = [];
 }
 
 const phoenixAppConfig = {
@@ -75,4 +80,4 @@ const phoenixAppConfig = {
 	}
 }
 
-export default [svelteComponentsConfig, phoenixAppConfig]
+export default [...svelteComponentsConfig, phoenixAppConfig]
