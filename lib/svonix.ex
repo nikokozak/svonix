@@ -11,7 +11,7 @@ defmodule Svonix do
   `name` - must match the name of the `.svelte` component you're referencing in `assets/svelte/`.
   `props` - a `Map` through which you can pass in props referenced in your Svelte component.
   """
-  def render(name, props) do
+  def render(name, props \\ %{}) do
     Phoenix.HTML.Tag.tag(:div,
       data: [props: payload(props)],
       id: "svonix-#{String.replace(name, " ", "-")}"
