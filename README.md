@@ -57,9 +57,10 @@ import 'svonix'
 <h1>Hey {name}, Phoenix and Svelte setup is working!</h1>
 ```
 
-2. Next, add a Svonix tag where desired, and pass in the arguments you like:
+2. Next, add a Svonix tag where desired (the tag name **must** match the filename of the component), and pass in the arguments you like:
 ```elixir
-// lib/myapp_web/templates/page/index.html.heex
+# lib/myapp_web/templates/page/index.html.heex
+
 <%= Svonix.render "test", %{ name: "Nikolai" } %>
 ```
 
