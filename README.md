@@ -13,7 +13,7 @@ Svonix adds [Rollup](https://rollupjs.org/guide/en/) to your Phoenix project, re
 ```elixir
 def deps do
   [
-    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.1.0"}
+    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.2.1"}
   ]
 end
 ```
@@ -48,7 +48,7 @@ import 'svonix'
 
 ## Usage
 
-1. Add new components to the `assets/svelte` folder. For example, we'll add a `test.svelte` component:
+1. Add new components to the `assets/js/svelte` folder. For example, we'll add a `test.svelte` component:
 ```html
 <script>
   export let name;
