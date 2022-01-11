@@ -11,10 +11,8 @@ const production = !process.env.MIX_ENV == "prod";
 console.log("Production:", production);
 
 const svelteComponentFiles = glob.sync('*.svelte', {cwd: 'js/svelte'});
-const svelteComponentsConfig;
-
-if (svelteComponentFiles.length > 0) {
-    svelteComponentsConfig = [{
+const svelteComponentsConfig = svelteComponentFiles.length > 0 ?  
+    [{
         input: svelteComponentFiles.map(fileName => `js/svelte/${fileName}`),
         output: {
             sourcemap: true,
@@ -36,10 +34,7 @@ if (svelteComponentFiles.length > 0) {
             production && terser(),
             production && filesize()
         ]
-    }]
-} else {
-    svelteComponentsConfig = [];
-}
+    }] : []
 
 const phoenixAppConfig = {
 	input: 'js/app.js',
