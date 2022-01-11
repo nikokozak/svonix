@@ -2,7 +2,7 @@
 
 Svonix is a small library that allows you to easily create and use [Svelte](https://svelte.dev/) components in [Phoenix](https://www.phoenixframework.org/).
 
-Svonix is loosely based on the ideas behind [Sveltex](https://github.com/virkillz/sveltex), but is written from the ground up to support [Phoenix](https://www.phoenixframework.org/) `> 1.6`, as well as dynamic loading of individual Svelte components to save bandwidth.
+Svonix is loosely based on the ideas behind [Sveltex](https://github.com/virkillz/sveltex), but is written from the ground up to support [Phoenix](https://www.phoenixframework.org/) `> 1.6`, as well as dynamic loading of individual Svelte components to reduce filesizes.
 
 Svonix adds [Rollup](https://rollupjs.org/guide/en/) to your Phoenix project, replacing [ESBuild](https://esbuild.github.io/) which is included by default. Rollup is Svelte's default bundler.
 
@@ -20,7 +20,7 @@ end
 
 2. Next, run `mix svonix.setup` from your Phoenix application's root folder. 
 
-**Svonix will copy over the following files into your `assets` folder, will create a `assets/svelte` folder, and will run `npm install`**:
+**Svonix will copy over the following files into your `assets` folder, will create a `assets/js/svelte` folder, and will run `npm install`**:
 - `package.json` (listing svelte's dependencies)
 - `rollup.config.js` (configuration for the Rollup bundler)
 - `svonix_rollup_plugin.js` (a Rollup plugin that injects a small handler into your `app.js`, allowing Svelte components to be dynamically loaded)
