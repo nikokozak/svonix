@@ -39,8 +39,7 @@ const glob = require('glob');
 export default function svonixPlugin (options) {
     const { 
         staticDir = '/assets/svelte_components/',
-        componentDir = 'js/svelte/',
-        dynamic = true
+        componentDir = 'js/svelte/'
     } = options;
 
     return {
