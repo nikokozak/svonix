@@ -4,7 +4,7 @@ Svonix is a small library that allows you to easily create and use [Svelte](http
 
 Svonix is loosely based on the ideas behind [Sveltex](https://github.com/virkillz/sveltex), but is written to support [Phoenix](https://www.phoenixframework.org/) `> 1.6`, as well as dynamic loading of individual Svelte components to reduce filesizes.
 
-Svonix adds [Rollup](https://rollupjs.org/guide/en/) to your Phoenix project, replacing [ESBuild](https://esbuild.github.io/) which is included by default. Rollup is Svelte's default bundler.
+Svonix works with [ESBuild](https://rollupjs.org/guide/en/) which is the default bundler for Phoenix.
 
 ## Installation
 
@@ -13,7 +13,7 @@ Svonix adds [Rollup](https://rollupjs.org/guide/en/) to your Phoenix project, re
 ```elixir
 def deps do
   [
-    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.3.0"}
+    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.4.0"}
   ]
 end
 ```
@@ -22,8 +22,7 @@ end
 
 **Svonix will copy over the following files into your `assets` folder, will create a `assets/js/svelte` folder, and will run `npm install`**:
 - `package.json` (listing svelte's dependencies)
-- `rollup.config.js` (configuration for the Rollup bundler)
-- `svonix_rollup_plugin.js` (a Rollup plugin that injects a small handler into your `app.js`, allowing Svelte components to be dynamically loaded)
+- `build.js` (custom ESBuild build script)
 
 3. In your `config/dev.exs` file, add a watcher (you can replace the ESBuild watcher already there):
 
@@ -31,13 +30,10 @@ end
 config :my_app, MyApp.Endpoint,
     # other options
     watchers: [
-        node: [
-            "node_modules/rollup/dist/bin/rollup",
-            "--config",
-            "--watch",
-            cd: Path.expand("../assets", __DIR__) 
-        ]
+        node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)]
     ]
+
+
 ```
 
 4. Finally, in your `assets/js/app.js` file, add the following line at the top:
