@@ -4,7 +4,7 @@ Svonix is a small library that allows you to easily create and use [Svelte](http
 
 Svonix is loosely based on the ideas behind [Sveltex](https://github.com/virkillz/sveltex), but is written to support [Phoenix](https://www.phoenixframework.org/) `> 1.6`, as well as dynamic loading of individual Svelte components to reduce filesizes.
 
-Svonix works with [ESBuild](https://rollupjs.org/guide/en/) which is the default bundler for Phoenix.
+Svonix works with [ESBuild](https://esbuild.github.io/) which is the default bundler for Phoenix.
 
 ## Installation
 
