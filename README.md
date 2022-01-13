@@ -13,7 +13,7 @@ Svonix adds [Rollup](https://rollupjs.org/guide/en/) to your Phoenix project, re
 ```elixir
 def deps do
   [
-    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.2.2"}
+    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.3.0"}
   ]
 end
 ```
