@@ -5,6 +5,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import styles from 'rollup-plugin-styles';
 import glob from 'glob';
 
 const production = !process.env.MIX_ENV == "prod";
@@ -45,6 +46,7 @@ const phoenixAppConfig = {
 		file: '../priv/static/assets/app.js',
 	},
 	plugins: [
+        styles({ mode: 'emit' }),
 		resolve({
 			browser: true,
 			dedupe: ['svelte']
@@ -59,12 +61,7 @@ const phoenixAppConfig = {
 		commonjs(),
         // ADD OTHER NON-PROCESSED ASSETS HERE, SEE:
         // https://www.npmjs.com/package/rollup-plugin-copy
-        copy({
-            targets: [{
-                src: ["css/**/*", "!css/app.css"],
-                dest: "../priv/static/assets"
-            }]
-        }),
+        // copy({}),
         svonix({}),
 		production && terser()
 	],
