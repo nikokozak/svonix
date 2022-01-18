@@ -20,7 +20,7 @@ end
 
 2. Next, run `mix svonix.setup` from your Phoenix application's root folder. 
 
-**Svonix will copy over the following files into your `assets` folder, will create a `assets/js/svelte` folder, and will run `npm install`**:
+**Svonix create a `assets/js/svelte` folder, and will run `npm install`, after copying over the following files into your `assets` folder:
 - `package.json` (listing svelte's dependencies)
 - `build.js` (custom ESBuild build script)
 
