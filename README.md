@@ -13,7 +13,7 @@ Svonix works with [ESBuild](https://esbuild.github.io/) which is the default bun
 ```elixir
 def deps do
   [
-    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.4.0"}
+    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.5.0"}
   ]
 end
 ```
@@ -62,4 +62,34 @@ import 'svonix'
 
 You should see the component rendered in the view.
 
+## Advanced Usage
 
+**Folder Structure**
+
+Svonix supports nesting components to accommodate whatever structure you might desire. In other words, you can structure your svelte files as follows:
+
+```
+assets/js/svelte/
+    ARootComponent.svelte
+    helpers/
+        AHelperComponent.svelte
+        AnotherComponent.svelte
+            evenMoreHelpers/
+                PrettyDeepNesting.svelte
+```
+
+In order to render a component that has been nested (say, for example, `AnotherComponent.svelte`), simply pass in the path of the component (**without an extension**) into the `render` function:
+
+```Elixir
+<%= Svonix.render "helpers/AnotherComponent" %>
+```
+
+**Private Components**
+
+By default, any and all components you declare in your folder structure will generate individual `js` files in your `priv/static/assets/svelte_components` folder. This isn't really a problem given that these files are only loaded by the client on demand. Nonetheless, **to avoid compiling a given file, simply prepend an `_` (underscore) to its name**. You can import the file from other components, but it will not be made available to render.
+
+```
+assets/js/svelte/
+    ThisWillRender.svelte
+    _ThisWillNot.svelte
+```
