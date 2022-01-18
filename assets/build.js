@@ -96,8 +96,8 @@ const svonixPlugin = {
         }))
         
         build.onLoad({ filter: /.*/, namespace: 'svonix-ns' }, async () => { 
-            const svelte_files = glob.sync('js/svelte/*.svelte');
-            const svelte_filenames = glob.sync('*.svelte', { cwd: 'js/svelte' })
+            const svelte_files = glob.sync('js/svelte/**/*.svelte', { ignore: 'js/svelte/**/_*.svelte' });
+            const svelte_filenames = svelte_files.map(el => path.relative('js/svelte', el).replace('.svelte', ''))
            
             await esbuild.build({
                 entryPoints: svelte_files,
