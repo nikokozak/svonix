@@ -13,7 +13,7 @@ Svonix works with [ESBuild](https://esbuild.github.io/) which is the default bun
 ```elixir
 def deps do
   [
-    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.5.0"}
+    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.5.1"}
   ]
 end
 ```
