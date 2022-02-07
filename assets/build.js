@@ -90,6 +90,8 @@ const glob = require('glob');
 const svonixPlugin = {
     name: 'svonix',
     setup(build) {
+        let path = require('path')
+
         build.onResolve({ filter: /^svonix$/ }, args => ({
             path: args.path,
             namespace: 'svonix-ns'
