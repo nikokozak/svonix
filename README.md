@@ -6,6 +6,8 @@ Svonix is loosely based on the ideas behind [Sveltex](https://github.com/virkill
 
 Svonix works with [ESBuild](https://esbuild.github.io/) which is the default bundler for Phoenix.
 
+Please note that while npm packages can be imported and work as you would expect, **Svelte component libraries** are currently not supported.
+
 ## Installation
 
 1. Add `svonix` to your list of dependencies in `mix.exs`:
