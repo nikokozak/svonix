@@ -24,3 +24,6 @@ svonix-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# Test App folder (we use assets for files to inject)
+/test_app/

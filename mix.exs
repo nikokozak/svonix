@@ -20,7 +20,8 @@ defmodule Svonix.MixProject do
   defp deps do
     [
       {:phoenix_html, "~> 3.2"},
-      {:jason, "~> 1.3"}
+      {:jason, "~> 1.3"},
+      {:phx_test, "~> 0.1.0", only: [:dev, :test]}
     ]
   end
 end
