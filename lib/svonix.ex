@@ -27,4 +27,8 @@ defmodule Svonix do
     end
   end
 
+   def generate_id(name) do
+       "svelte-#{String.replace(name, " ", "-")}-#{System.unique_integer([:positive])}"
+   end
+
 end
