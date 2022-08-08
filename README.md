@@ -15,11 +15,7 @@ Please note that while npm packages can be imported and work as you would expect
 ```elixir
 def deps do
   [
-<<<<<<< HEAD
-    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.5.1"}
-=======
     {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.6.0"}
->>>>>>> 0e448fb (update run task, update readme)
   ]
 end
 ```
