@@ -15,7 +15,11 @@ Please note that while npm packages can be imported and work as you would expect
 ```elixir
 def deps do
   [
+<<<<<<< HEAD
     {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.5.1"}
+=======
+    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.6.0"}
+>>>>>>> 0e448fb (update run task, update readme)
   ]
 end
 ```
@@ -26,23 +30,24 @@ end
 - `package.json` (listing svelte's dependencies)
 - `build.js` (custom ESBuild build script)
 
-3. In your `config/dev.exs` file, add a watcher (you can replace the ESBuild watcher already there):
+**Svonix will also automatically make changes to the following files:**
+- In your `config/dev.exs` file, it will add a watcher (and comment out the ESBuild watcher already there):
 
 ```elixir
 config :my_app, MyApp.Endpoint,
     # other options
     watchers: [
-        node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)]
+        node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)],
     ]
-
-
 ```
 
-4. Finally, in your `assets/js/app.js` file, add the following line at the top:
+- In your `assets/js/app.js` file, it will add the following line at the top:
 
 ```javascript
 import 'svonix'
 ```
+
+3. Svonix is ready to use! 
 
 ## Usage
 
@@ -94,4 +99,26 @@ By default, any and all components you declare in your folder structure will gen
 assets/js/svelte/
     ThisWillRender.svelte
     _ThisWillNot.svelte
+```
+
+## Troubleshooting
+
+**Installation**
+
+If for any reason the installation errors out, you can always try the following:
+
+- Ensure that the following line is present in your "watchers" config option in `config/dev.exs`, and that the default `esbuild: {...}` option is commented out or deleted:
+
+```elixir
+config :my_app, MyApp.Endpoint,
+    # other options
+    watchers: [
+        node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)],
+    ]
+```
+
+- Ensure that the following line is included at the top of your `assets/js/app.js` file:
+
+```javascript
+import 'svonix'
 ```
