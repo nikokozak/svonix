@@ -1,3 +1,7 @@
+## Contributors Wanted!
+
+There's a lot to do to further streamline Svelte <~> Svonix goodness. Please feel free to submit pull requests, or add in new features - it's really an easy library to wrap your head around, and quite fun to work with as a first open source project.
+
 # Svonix
 
 Svonix is a small library that allows you to easily create and use [Svelte](https://svelte.dev/) components in [Phoenix](https://www.phoenixframework.org/).
@@ -118,3 +122,7 @@ config :my_app, MyApp.Endpoint,
 ```javascript
 import 'svonix'
 ```
+
+## TODO
+
+- [ ] How to better test a successful integration without having to resort to building containers/etc.
