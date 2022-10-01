@@ -7,7 +7,12 @@ defmodule Svonix.MixProject do
       version: "0.5.1",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: "A library for easily integrating Svelte components into Phoenix",
+      package: [
+        licenses: ["MIT"],
+        source_url: "https://github.com/nikokozak/svonix"
+      ]
     ]
   end
 
