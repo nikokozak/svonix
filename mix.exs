@@ -4,7 +4,7 @@ defmodule Svonix.MixProject do
   def project do
     [
       app: :svonix,
-      version: "0.5.1",
+      version: "0.6.2",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps(),

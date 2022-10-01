@@ -19,7 +19,7 @@ Please note that while npm packages can be imported and work as you would expect
 ```elixir
 def deps do
   [
-    {:svonix, git: "https://github.com/nikokozak/svonix", tag: "v0.6.0"}
+    {:svonix, "~> 0.6"}
   ]
 end
 ```
@@ -97,7 +97,7 @@ By default, any and all components you declare in your folder structure will gen
 
 ```
 assets/js/svelte/
-    ThisWillRender.svelte
+    ThisWillBeExportedAsAFile.svelte
     _ThisWillNot.svelte
 ```
 
