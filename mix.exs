@@ -4,24 +4,30 @@ defmodule Svonix.MixProject do
   def project do
     [
       app: :svonix,
-      version: "0.6.2",
+      version: "0.6.3",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: "A library for easily integrating Svelte components into Phoenix",
-      package: [
-        licenses: ["MIT"],
-        source_url: "https://github.com/nikokozak/svonix",
-        links: %{
-          "Github" => "https://github.com/nikokozak/svonix"
-        }
-      ]
+      package: package()
     ]
   end
 
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  defp package() do
+    [
+      licenses: ["MIT"],
+      source_url: "https://github.com/nikokozak/svonix",
+      links: %{
+        "Github" => "https://github.com/nikokozak/svonix"
+      },
+      files: ~w(lib assets priv .formatter.exs mix.exs README* readme* LICENSE*
+                license* CHANGELOG* changelog* src)
     ]
   end
 
