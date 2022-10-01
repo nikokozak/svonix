@@ -26,8 +26,7 @@ defmodule Svonix.MixProject do
       links: %{
         "Github" => "https://github.com/nikokozak/svonix"
       },
-      files: ~w(lib assets priv .formatter.exs mix.exs README* readme* LICENSE*
-                license* CHANGELOG* changelog* src)
+      files: ~w(lib assets .formatter.exs mix.exs README* LICENSE*)
     ]
   end
 
