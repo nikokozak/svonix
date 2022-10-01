@@ -11,7 +11,10 @@ defmodule Svonix.MixProject do
       description: "A library for easily integrating Svelte components into Phoenix",
       package: [
         licenses: ["MIT"],
-        source_url: "https://github.com/nikokozak/svonix"
+        source_url: "https://github.com/nikokozak/svonix",
+        links: %{
+          "Github" => "https://github.com/nikokozak/svonix"
+        }
       ]
     ]
   end
