@@ -123,6 +123,18 @@ config :my_app, MyApp.Endpoint,
 import 'svonix'
 ```
 
+**Installation Fails at any point**
+
+There's no rollback mechanism for the insertions Svonix executes on `dev.exs` and `app.js`. If the install fails at any point, make sure to check for duplicate injections in these files and remove them.
+
+**Umbrella Applications**
+
+Svonix supports being installed in umbrella application apps - you'll probably get an error regarding `npm` not being able to find deps like `phoenix_html`. If this happens, run the following command:
+
+```shell
+npm install ../../../deps/phoenix ../../../deps/phoenix_html ../../../deps/phoenix_live_view --save
+```
+
 ## TODO
 
 - [ ] How to better test a successful integration without having to resort to building containers/etc.
